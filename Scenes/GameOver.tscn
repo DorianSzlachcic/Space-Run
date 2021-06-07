@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://RaubFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://game-over.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 540 ), Vector2( 0, -50 ), Vector2( 0, 30 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 540.0
+margin_right = 480.0
+margin_bottom = 810.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Game over
+
+Press \"r\" to restart
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/animation = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true

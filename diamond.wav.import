@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/diamond.wav-371985c3ffc8af6bfdeb7f791397f6ce.sample"
+
+[deps]
+
+source_file="res://diamond.wav"
+dest_files=[ "res://.import/diamond.wav-371985c3ffc8af6bfdeb7f791397f6ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

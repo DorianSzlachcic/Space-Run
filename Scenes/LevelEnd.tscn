@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://RaubFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/End.gd" type="Script" id=2]
+[ext_resource path="res://win.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 540 ), Vector2( 0, -50 ), Vector2( 0, 30 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 750 ), Vector2( 0, 160 ), Vector2( 0, 240 ), Vector2( 0, 200 ), Vector2( 0, 210 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 810 ), Vector2( 0, 220 ), Vector2( 0, 300 ), Vector2( 0, 260 ), Vector2( 0, 270 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 900 ), Vector2( 0, 310 ), Vector2( 0, 390 ), Vector2( 0, 350 ), Vector2( 0, 360 ) ]
+}
+
+[node name="LevelEnd" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 540.0
+margin_right = 480.0
+margin_bottom = 810.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "
+You finished the run
+
+your time:
+
+
+
+
+
+
+
+Press \"enter\""
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_top = 810.0
+margin_right = 480.0
+margin_bottom = 860.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Points:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_top = 750.0
+margin_right = 320.0
+margin_bottom = 790.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+
+[node name="Label4" type="Label" parent="."]
+margin_top = 900.0
+margin_right = 320.0
+margin_bottom = 940.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/animation = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
